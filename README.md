@@ -13,5 +13,8 @@ In settings panel you can choose who can see the list (and the link to the page)
 *allow all members
 *allow only some users
 
+##Fully localizabled
+Every string is is passed to T()
+
 ##License
 GPL v3
