@@ -4,7 +4,7 @@ if(!defined('APPLICATION')) die();
 $PluginInfo['EasyMembersList'] = array(
 	'Name' => 'Easy Members List',
 	'Description' => 'Show members list in vanilla forums. Link position and allowed users are configurable.',
-	'Version' => '0.1',
+	'Version' => '0.1.1',
 	'RequiredApplications' => array('Vanilla' => '2.1a1'),
 	'RequiredTheme' => FALSE,
 	'RequiredPlugins' => FALSE,
@@ -70,7 +70,7 @@ class EasyMembersListPlugin extends Gdn_Plugin{
     }else{
       //else (user not guest) check if the list is empty (show)
       $ArrUsers = explode(',', C('Plugins.EasyMembersList.ShowOnlyToTheseUsers', ''));
-      $ArrUsersTrimmed = [];
+      $ArrUsersTrimmed = array();
       foreach($ArrUsers as $Name){
 	$TrimmedName = trim($Name);
 	if($TrimmedName != ''){
