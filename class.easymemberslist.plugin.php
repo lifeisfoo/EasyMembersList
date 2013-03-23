@@ -20,7 +20,6 @@ class EasyMembersListPlugin extends Gdn_Plugin{
   //TODO: add others place to show link
   //TODO: role based "show only to" configuration
   //TODO: show a default "page not found" when user is not allowed to see list
-  //TODO: remove /members route on disable
 
   public function SettingsController_EasyMembersList_Create($Sender) {
     $Sender->Permission('Garden.Plugins.Manage');
@@ -122,6 +121,10 @@ class EasyMembersListPlugin extends Gdn_Plugin{
   
   public function Setup() {
     $this->Structure();
+  }
+
+  public function OnDisable() {
+    Gdn::Router()->DeleteRoute('members');
   }
   
   public function Structure() {
