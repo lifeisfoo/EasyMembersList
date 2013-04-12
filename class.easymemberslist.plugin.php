@@ -4,7 +4,7 @@ if(!defined('APPLICATION')) die();
 $PluginInfo['EasyMembersList'] = array(
 	'Name' => 'Easy Members List',
 	'Description' => 'Show members list in vanilla forums. Link position and allowed users are configurable.',
-	'Version' => '0.1.2',
+	'Version' => '0.1.3',
 	'RequiredApplications' => array('Vanilla' => '2.1a1'),
 	'RequiredTheme' => FALSE,
 	'RequiredPlugins' => FALSE,
