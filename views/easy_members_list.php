@@ -8,7 +8,11 @@ if(!defined('APPLICATION')) die();
       <tr>
          <th><?php echo T('Username'); ?></th>
          <th><?php echo T('Roles'); ?></th>
-         <th><?php echo T('Email'); ?></th>
+<?php
+if($this->ShowEmail == 1) {
+    echo '<th>' . T('Email') . '</th>';
+}
+?>
          <th><?php echo T('First Visit'); ?></th>
          <th><?php echo T('Last Visit'); ?></th>
       </tr>
@@ -36,7 +40,11 @@ if(!defined('APPLICATION')) die();
            echo $RolesString;
            ?>
         </td>
-        <td class="UserEmail"><?php echo $User->Email; ?></td>
+<?php
+           if($this->ShowEmail == 1) {
+               echo '<td class="UserEmail">' . $User->Email . '</td>';
+           }
+?>
         <td class="UserFirstVisit"><?php echo Gdn_Format::Date($User->DateFirstVisit, 'html'); ?></td>
         <td class="UserLastVisit"><?php echo Gdn_Format::Date($User->DateLastActive, 'html'); ?></td>
      </tr>
