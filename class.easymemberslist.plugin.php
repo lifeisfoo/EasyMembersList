@@ -4,7 +4,7 @@ if(!defined('APPLICATION')) die();
 $PluginInfo['EasyMembersList'] = array(
 	'Name' => 'Easy Members List',
 	'Description' => 'Show members list in vanilla forums. Link position and allowed users are configurable.',
-	'Version' => '0.2.1',
+	'Version' => '0.2.2',
 	'RequiredApplications' => array('Vanilla' => '2.1a1'),
 	'RequiredTheme' => FALSE,
 	'RequiredPlugins' => FALSE,
@@ -112,7 +112,7 @@ class EasyMembersListPlugin extends Gdn_Plugin{
 
   public function Base_Render_Before($Sender){//check settings
     if( C('Plugins.EasyMembersList.ShowLinkInMenu', '0') == '1' ){
-      if(self::isUserAllowed($Sender)){
+      if(self::isUserAllowed($Sender)  && $Sender->Menu){
           $Sender->Menu->AddLink('Members', T('Members list'), 'members');
       }
     }
