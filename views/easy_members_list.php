@@ -3,6 +3,7 @@ if(!defined('APPLICATION')) die();
 
 ?>
 <h1><?php echo T('Members list'); ?></h1>
+<h2><?php printf(T('%s members'), count($this->UserData->Result()));?> </h2>
 <table class="EasyMembersListTable" style="width: 100%;">
    <thead>
       <tr>
